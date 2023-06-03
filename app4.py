@@ -31,7 +31,7 @@ def display_sarcastic_remark(remark):
     st.title(remark)
     time.sleep(0.1)
 def cleaning_reduntant(text):
-return " ".join([word for word in str(text).split() if word not in redunant])
+	return " ".join([word for word in str(text).split() if word not in redunant])
 
 st.header('Sentiment Analysis')
 with st.title('Analyze Text'):
