@@ -40,6 +40,7 @@ if text:
 	text1=text
 	blob = TextBlob(text)
 predict_button = st.button("Predict")
+st.write(predict_button)
 if (st.button("Predict")):
 	if (text!=""):
 		wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
