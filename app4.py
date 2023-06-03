@@ -90,7 +90,7 @@ if (predict_button==True):
 		if(y_pred==3):
 			remark = "That's Sarcasm!🙃"
 			display_sarcastic_remark(remark)
-		else:
-			st.write(text1)
-			remark = "No Words to Analyze"
-			display_sarcastic_remark(remark)
+	else:
+		st.write(text1)
+		remark = "No Words to Analyze"
+		display_sarcastic_remark(remark)
