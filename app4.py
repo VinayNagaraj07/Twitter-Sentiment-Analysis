@@ -40,7 +40,7 @@ if text:
 	text1=text
 	blob = TextBlob(text)
 predict_button = st.button("Predict")
-if st.button("Predict"):
+if (predict_button == True):
 	wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
 	st.title('Word Cloud')
 	plt.figure(figsize=(10, 5))
