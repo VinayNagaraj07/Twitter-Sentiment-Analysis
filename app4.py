@@ -40,7 +40,7 @@ if text:
 predict_button = st.button("Predict")
 
 wordcloud = WordCloud(width=800, height=400).generate(text)
-plt.imshow(wordcloud, interpolation="bilinear")
+plt.show(wordcloud, interpolation="bilinear")
 
 #st.write('Polarity: ', round(blob.sentiment.polarity,2))
 #st.write('Subjectivity: ', round(blob.sentiment.subjectivity,2))
