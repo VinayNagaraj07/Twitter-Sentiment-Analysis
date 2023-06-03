@@ -1,0 +1,13 @@
+pandas
+sklearn
+streamlit
+textblob
+cleantext
+pickle
+tensorflow
+numpy
+time
+re
+nltk
+matplotlib
+wordcloud
