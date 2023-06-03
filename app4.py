@@ -40,6 +40,7 @@ if text:
 predict_button = st.button("Predict")
 
 wordcloud = WordCloud(width=800, height=400).generate(text)
+wordcloud_image = generate_wordcloud(text_input)
 st.image(wordcloud_image, use_column_width=True)
 
 #st.write('Polarity: ', round(blob.sentiment.polarity,2))
