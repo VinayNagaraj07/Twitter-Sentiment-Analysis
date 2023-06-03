@@ -76,19 +76,19 @@ if st.button("Predict"):
 	y_pred = model.predict(X_test)
 
 	if text!="":
-	if(y_pred==0):
-	remark = "That's Figurative!😄"
-	display_sarcastic_remark(remark)
-	if(y_pred==1):
-	remark = "That's Irony!😏"
-	display_sarcastic_remark(remark)
-	if(y_pred==2):
-	remark = "That's Regular!😐"
-	display_sarcastic_remark(remark)
-	if(y_pred==3):
-	remark = "That's Sarcasm!🙃"
-	display_sarcastic_remark(remark)
-	else:
-	st.write(text1)
-	remark = "No Words to Analyze"
-	display_sarcastic_remark(remark)
+		if(y_pred==0):
+			remark = "That's Figurative!😄"
+			display_sarcastic_remark(remark)
+		if(y_pred==1):
+			remark = "That's Irony!😏"
+			display_sarcastic_remark(remark)
+		if(y_pred==2):
+			remark = "That's Regular!😐"
+			display_sarcastic_remark(remark)
+		if(y_pred==3):
+			remark = "That's Sarcasm!🙃"
+			display_sarcastic_remark(remark)
+		else:
+			st.write(text1)
+			remark = "No Words to Analyze"
+			display_sarcastic_remark(remark)
