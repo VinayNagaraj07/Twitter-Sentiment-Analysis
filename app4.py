@@ -18,7 +18,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 vectorizer = TfidfVectorizer(max_features=200)
 
 stopwords_set = set(stopwords.words('english'))
-predict_button = st.button("Predict")
+
 text=""
 text1=""
 filename="sentiment_model2.pkl"
@@ -37,6 +37,11 @@ with st.title('Analyze Text'):
 if text:
 	text1=text
 	blob = TextBlob(text)
+predict_button = st.button("Predict")
+
+wordcloud = WordCloud(width=800, height=400).generate(text)
+st.image(wordcloud_image, use_column_width=True)
+
 #st.write('Polarity: ', round(blob.sentiment.polarity,2))
 #st.write('Subjectivity: ', round(blob.sentiment.subjectivity,2))
 plt.figure(figsize = (20,20))
