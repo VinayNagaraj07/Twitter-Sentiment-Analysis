@@ -18,7 +18,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 vectorizer = TfidfVectorizer(max_features=200)
 
 stopwords_set = set(stopwords.words('english'))
-
+predict_button = st.button("Predict")
 text=""
 text1=""
 filename="sentiment_model2.pkl"
