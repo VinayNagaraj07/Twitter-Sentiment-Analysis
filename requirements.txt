@@ -8,3 +8,4 @@ numpy
 nltk
 matplotlib
 wordcloud
+scikit-learn
