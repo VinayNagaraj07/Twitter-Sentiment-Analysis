@@ -30,6 +30,8 @@ with open(filename1, 'rb') as file:
 def display_sarcastic_remark(remark):
     st.title(remark)
     time.sleep(0.1)
+def cleaning_reduntant(text):
+return " ".join([word for word in str(text).split() if word not in redunant])
 
 st.header('Sentiment Analysis')
 with st.title('Analyze Text'):
@@ -53,22 +55,19 @@ if st.button("Predict"):
 	redunant_df = pd.read_csv("reduced_words.csv")
 	redunant=set(redunant_df["words"])
 
-	def cleaning_reduntant(text):
-	    return " ".join([word for word in str(text).split() if word not in redunant])
-
 	text1=cleaning_reduntant(text1)
 	if(text1!=""):
-	    st.title("Cleaned Text")
-	    text1 = re.sub('((www.[^s]+)|(https?://[^s]+))|(http?://[^s]+)', '',text1)
-	    tknzr = TweetTokenizer(strip_handles=True)
-	    text1=tknzr.tokenize(text1)
-	    text1=str(text1)
-	    text1=re.sub(r'[^a-zA-Z0-9\s]', '', text1)
-	    text1=cleantext.clean(text1, clean_all= False, extra_spaces=True ,stopwords=True ,lowercase=True ,numbers=True , punct=True)
-	    st.write(text1)
+	st.title("Cleaned Text")
+	text1 = re.sub('((www.[^s]+)|(https?://[^s]+))|(http?://[^s]+)', '',text1)
+	tknzr = TweetTokenizer(strip_handles=True)
+	text1=tknzr.tokenize(text1)
+	text1=str(text1)
+	text1=re.sub(r'[^a-zA-Z0-9\s]', '', text1)
+	text1=cleantext.clean(text1, clean_all= False, extra_spaces=True ,stopwords=True ,lowercase=True ,numbers=True , punct=True)
+	st.write(text1)
 
 	with open(filename, 'rb') as file:
-	    model = pickle.load(file)
+	model = pickle.load(file)
 	unseen_tweets=[text1]
 	unseen_df=pd.DataFrame(unseen_tweets)
 	unseen_df.columns=["Unseen"]
@@ -77,19 +76,19 @@ if st.button("Predict"):
 	y_pred = model.predict(X_test)
 
 	if text!="":
-	    if(y_pred==0):
-		remark = "That's Figurative!😄"
-		display_sarcastic_remark(remark)
-	    if(y_pred==1):
-		remark = "That's Irony!😏"
-		display_sarcastic_remark(remark)
-	    if(y_pred==2):
-		remark = "That's Regular!😐"
-		display_sarcastic_remark(remark)
-	    if(y_pred==3):
-		remark = "That's Sarcasm!🙃"
-		display_sarcastic_remark(remark)
+	if(y_pred==0):
+	remark = "That's Figurative!😄"
+	display_sarcastic_remark(remark)
+	if(y_pred==1):
+	remark = "That's Irony!😏"
+	display_sarcastic_remark(remark)
+	if(y_pred==2):
+	remark = "That's Regular!😐"
+	display_sarcastic_remark(remark)
+	if(y_pred==3):
+	remark = "That's Sarcasm!🙃"
+	display_sarcastic_remark(remark)
 	else:
-	    st.write(text1)
-	    remark = "No Words to Analyze"
-	    display_sarcastic_remark(remark)
+	st.write(text1)
+	remark = "No Words to Analyze"
+	display_sarcastic_remark(remark)
