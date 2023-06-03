@@ -57,20 +57,20 @@ if st.button("Predict"):
 
 	text1=cleaning_reduntant(text1)
 	if(text1!=""):
-	st.title("Cleaned Text")
-	text1 = re.sub('((www.[^s]+)|(https?://[^s]+))|(http?://[^s]+)', '',text1)
-	tknzr = TweetTokenizer(strip_handles=True)
-	text1=tknzr.tokenize(text1)
-	text1=str(text1)
-	text1=re.sub(r'[^a-zA-Z0-9\s]', '', text1)
-	text1=cleantext.clean(text1, clean_all= False, extra_spaces=True ,stopwords=True ,lowercase=True ,numbers=True , punct=True)
-	st.write(text1)
+		st.title("Cleaned Text")
+		text1 = re.sub('((www.[^s]+)|(https?://[^s]+))|(http?://[^s]+)', '',text1)
+		tknzr = TweetTokenizer(strip_handles=True)
+		text1=tknzr.tokenize(text1)
+		text1=str(text1)
+		text1=re.sub(r'[^a-zA-Z0-9\s]', '', text1)
+		text1=cleantext.clean(text1, clean_all= False, extra_spaces=True ,stopwords=True ,lowercase=True ,numbers=True , punct=True)
+		st.write(text1)
 
 	with open(filename, 'rb') as file:
-	model = pickle.load(file)
-	unseen_tweets=[text1]
-	unseen_df=pd.DataFrame(unseen_tweets)
-	unseen_df.columns=["Unseen"]
+		model = pickle.load(file)
+		unseen_tweets=[text1]
+		unseen_df=pd.DataFrame(unseen_tweets)
+		unseen_df.columns=["Unseen"]
 
 	X_test = vectorizer.transform(unseen_tweets)
 	y_pred = model.predict(X_test)
