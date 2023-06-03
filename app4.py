@@ -40,17 +40,18 @@ if text:
 	text1=text
 	blob = TextBlob(text)
 predict_button = st.button("Predict")
-if (predict_button == True) and (text!=""):
-	wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
-	st.title('Word Cloud')
-	plt.figure(figsize=(10, 5))
-	plt.imshow(wordcloud, interpolation='bilinear')
-	plt.axis('off')
-	st.pyplot(plt)
+if (predict_button == True):
+	if (text!=""):
+		wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
+		st.title('Word Cloud')
+		plt.figure(figsize=(10, 5))
+		plt.imshow(wordcloud, interpolation='bilinear')
+		plt.axis('off')
+		st.pyplot(plt)
 
-	#st.write('Polarity: ', round(blob.sentiment.polarity,2))
-	#st.write('Subjectivity: ', round(blob.sentiment.subjectivity,2))
-	plt.figure(figsize = (20,20))
+		#st.write('Polarity: ', round(blob.sentiment.polarity,2))
+		#st.write('Subjectivity: ', round(blob.sentiment.subjectivity,2))
+		plt.figure(figsize = (20,20))
 
 	redunant_df = pd.read_csv("reduced_words.csv")
 	redunant=set(redunant_df["words"])
