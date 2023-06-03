@@ -39,7 +39,7 @@ with st.title('Analyze Text'):
 if text:
 	text1=text
 	blob = TextBlob(text)
-predict_button = st.button("Predict")
+#predict_button = st.button("Predict")
 #st.write(predict_button)
 if (text!=""):
 	wordcloud = WordCloud(width=800, height=400).generate(text)
