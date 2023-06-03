@@ -43,7 +43,7 @@ predict_button = st.button("Predict")
 st.write(predict_button)
 if (predict_button==True):
 	if (text!=""):
-		wordcloud = WordCloud(width=800, height=400, background_color='white').generate(text)
+		wordcloud = WordCloud(width=800, height=400).generate(text)
 		st.title('Word Cloud')
 		plt.figure(figsize=(10, 5))
 		plt.imshow(wordcloud, interpolation='bilinear')
