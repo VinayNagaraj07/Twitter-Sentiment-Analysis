@@ -99,7 +99,7 @@ else:
 	display_sarcastic_remark(remark)
 button=st.button("Stats For Nerd")	
 if button:
-	 with st.modal():
-        	st.write("This is a pop-up box!")
+ 	with st.modal():
+		st.write("This is a pop-up box!")
 		button=False
-        	st.button("Close")
+		st.button("Close")
