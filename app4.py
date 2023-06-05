@@ -21,7 +21,7 @@ import seaborn as sns
 import warnings
 warnings.filterwarnings("ignore")
 stopwords_set = set(stopwords.words('english'))
-
+st.set_option('deprecation.showPyplotGlobalUse', False)
 text=""
 text1=""
 text2=""
