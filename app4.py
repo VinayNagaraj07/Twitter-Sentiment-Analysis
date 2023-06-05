@@ -113,5 +113,12 @@ if modal.is_open():
 		html_table = book1.to_html(index=False)
 		html_table = html_table.replace('<table', '<table style="border-collapse: collapse;"')
 		st.markdown(html_table, unsafe_allow_html=True)
+		modal1 = Modal("Stats For Nerd","black")
+		button1=st.button("Confusion Matrix")	
+		if button1:
+			modal1.open()
+			with modal1.container():
+				st.write("Classification Report")
+		
 		st.write("[Click Here to view complete GitHub Repository](https://github.com/VinayNagaraj07/Twitter-Sentiment-Analysis)")
 		
