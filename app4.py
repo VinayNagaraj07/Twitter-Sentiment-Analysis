@@ -101,9 +101,10 @@ if button:
     modal.open()
 import streamlit.components.v1 as components
 if modal.is_open():
-	st.write("Prediction Model Used - Support Vector Classification (SVC)")
-	st.write("Word Embedding done Using - Pre-Trained Glove")
+	
 	with modal.container():
+		st.write("Prediction Model Used - Support Vector Classification (SVC)")
+		st.write("Word Embedding done Using - Pre-Trained Glove")
 		#button1=st.button("Classification Report")
 		col1, col2,col3 = st.columns(3)
 		if col1.button('Classification Report','Classification Report'):
