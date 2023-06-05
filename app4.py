@@ -21,6 +21,7 @@ stopwords_set = set(stopwords.words('english'))
 
 text=""
 text1=""
+text2=""
 filename="sentiment_model2.pkl"
 filename1="vectorizer_model.pkl"
 
@@ -41,13 +42,7 @@ if text:
 	blob = TextBlob(text)
 #predict_button = st.button("Predict")
 #st.write(predict_button)
-if (text!=""):
-	wordcloud = WordCloud(width=800, height=400).generate(text)
-	st.title('Word Cloud')
-	plt.figure(figsize=(10, 5))
-	plt.imshow(wordcloud, interpolation='bilinear')
-	plt.axis('off')
-	st.pyplot(plt)
+
 
 	#st.write('Polarity: ', round(blob.sentiment.polarity,2))
 	#st.write('Subjectivity: ', round(blob.sentiment.subjectivity,2))
@@ -64,8 +59,17 @@ if(text1!=""):
 	text1=tknzr.tokenize(text1)
 	text1=str(text1)
 	text1=re.sub(r'[^a-zA-Z0-9\s]', '', text1)
+	text2=text1.copy()
 	text1=cleantext.clean(text1, clean_all= False, extra_spaces=True ,stopwords=True ,lowercase=True ,numbers=True , punct=True)
 	st.write(text1)
+
+if (text2!=""):
+	wordcloud = WordCloud(width=800, height=400).generate(text)
+	st.title('Word Cloud')
+	plt.figure(figsize=(10, 5))
+	plt.imshow(wordcloud, interpolation='bilinear')
+	plt.axis('off')
+	st.pyplot(plt)
 
 with open(filename, 'rb') as file:
 	model = pickle.load(file)
@@ -95,4 +99,4 @@ else:
 	display_sarcastic_remark(remark)
 	
 if st.button("Stats For Nerd"):
-	st.warning("This is a warning message.")
+	st.info("This is a warning message.")
