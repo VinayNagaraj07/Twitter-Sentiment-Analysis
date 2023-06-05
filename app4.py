@@ -72,7 +72,7 @@ if(text1!=""):
 
 annotated_text(
     "Hello ",
-    annotation("world!", "noun", color="#8ef", border="1px dashed red"),
+    annotation("world!", "Stop Word", color="#faa"),
 )
 with open(filename, 'rb') as file:
 	model = pickle.load(file)
