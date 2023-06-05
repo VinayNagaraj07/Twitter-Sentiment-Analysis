@@ -73,32 +73,14 @@ def annotating_text(text):
 	annot_text=list()
 	for word in str(text).split():
 		if word in stopwords_set:
-			annot_text.append((word, "Stop Word", "#faa"))
+			annot_text.append((word, "Stop Word", "#fea"))
 		else:
 			annot_text.append(word)
 	return annot_text
 
 annot_text=annotating_text(text)
 annotated_text(annot_text)
-			
-			
-			
-		
-			
-	
-annotated_text(
-    "This ",
-    ("is", "verb", "#8ef"),
-    " some ",
-    ("annotated", "adj", "#faa"),
-    ("text", "noun", "#afa"),
-    " for those of ",
-    ("you", "pronoun", "#fea"),
-    " who ",
-    ("like", "verb", "#8ef"),
-    " this sort of ",
-    ("thing", "noun", "#afa"),
-)
+
 with open(filename, 'rb') as file:
 	model = pickle.load(file)
 	unseen_tweets=[text1]
