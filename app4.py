@@ -102,7 +102,7 @@ button=st.button("Stats For Nerd")
 modal = Modal()
 
 if button:
-    modal.open()
+    modal.open("My Modal","black")
 import streamlit.components.v1 as components
 if modal.is_open():
 	with modal.container():
