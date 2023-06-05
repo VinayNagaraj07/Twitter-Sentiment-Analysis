@@ -109,7 +109,7 @@ import streamlit.components.v1 as components
 if modal.is_open():
 	with modal.container():
 		button1=st.button("Classification Report")
-		col1, col2 = st.beta_columns(2)
+		col1, col2 = st.columns(2)
 		
 		if button1:
 			st.write("Classification Report")
