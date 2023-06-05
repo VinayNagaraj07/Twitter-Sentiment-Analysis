@@ -71,7 +71,7 @@ annotated_text(annot_text)
 
 text1=cleaning_reduntant(text1)
 if(text1!=""):
-	st.title("Cleaned Text")
+	#st.title("Cleaned Text")
 	text1 = re.sub('((www.[^s]+)|(https?://[^s]+))|(http?://[^s]+)', '',text1)
 	tknzr = TweetTokenizer(strip_handles=True)
 	text1=tknzr.tokenize(text1)
