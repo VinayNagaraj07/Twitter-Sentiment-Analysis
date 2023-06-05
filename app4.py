@@ -106,10 +106,5 @@ if button:
 
 if modal.is_open():
     with modal.container():
-	st.set_page_config(
-    	page_title="Streamlit App",
-    	layout="wide",
-    	initial_sidebar_state="auto",
-    	background_color="#F0F2F6",  # Specify your desired background color here
-	)
-        st.write("Text goes here")
+	st.set_page_config(page_title="Streamlit App",layout="wide",initial_sidebar_state="auto",background_color="#F0F2F6")
+	st.write("Text goes here")
