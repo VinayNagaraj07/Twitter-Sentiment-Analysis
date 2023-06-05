@@ -109,6 +109,7 @@ if modal.is_open():
 		st.write("Classification Report")
 		book1=pd.read_csv("Book1.csv")
 		book1.replace(np.NaN,"",inplace=True)
-		st.dataframe(book1.style.set_properties(**{'text-align': 'center'}))
+		st.table(book1)
+		#st.dataframe(book1.style.set_properties(**{'text-align': 'center'}))
 		st.write("[Click Here to view complete GitHub Repository](https://github.com/VinayNagaraj07/Twitter-Sentiment-Analysis)")
 		
