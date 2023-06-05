@@ -122,8 +122,7 @@ if modal.is_open():
 			plt.ylabel("Actual values" , fontdict = {'size':14}, labelpad = 10)
 			plt.title ("Confusion Matrix", fontdict = {'size':18}, pad = 20)
 			st.pyplot()
-		if col2.button('Word Cloud','Word Cloud'):
-			
+		if col3.button('Word Cloud','Word Cloud'):
 			if (text2!=""):
 				wordcloud = WordCloud(width=800, height=400).generate(text)
 				st.title('Word Cloud')
@@ -131,6 +130,8 @@ if modal.is_open():
 				plt.imshow(wordcloud, interpolation='bilinear')
 				plt.axis('off')
 				st.pyplot(plt)
+			else:
+				st.write("No Words to Plot")
 		
 		st.write("[Click Here to view complete GitHub Repository](https://github.com/VinayNagaraj07/Twitter-Sentiment-Analysis)")
 		
