@@ -16,6 +16,7 @@ from nltk.corpus import stopwords
 from wordcloud import WordCloud
 from sklearn.feature_extraction.text import TfidfVectorizer
 vectorizer = TfidfVectorizer(max_features=200)
+from streamlit_modal import Modal
 
 stopwords_set = set(stopwords.words('english'))
 
