@@ -99,7 +99,7 @@ else:
 	remark = "No Words to Analyze"
 	display_sarcastic_remark(remark)
 button=st.button("Stats For Nerd")	
-modal = Modal("Demo Modal","#F0F2F6")
+modal = Modal()
 
 if button:
     modal.open()
