@@ -99,12 +99,11 @@ else:
 	remark = "No Words to Analyze"
 	display_sarcastic_remark(remark)
 button=st.button("Stats For Nerd")	
-placeholder = st.empty()
+modal = Modal("Demo Modal")
+
 if button:
-	
-	placeholder.markdown("[Visit OpenAI's website](https://openai.com)")
-	placeholder.markdown("<a href='https://github.com/VinayNagaraj07/Twitter-Sentiment-Analysis/edit/main' target='_blank'>Click here</a> to visit for Complete Project.")
-	placeholder.write("This is a pop-up box!")
-	button=False
-	
-	st.button("Close")
+    modal.open()
+
+if modal.is_open():
+    with modal.container():
+        st.write("Text goes here")
