@@ -110,7 +110,8 @@ if modal.is_open():
 	with modal.container():
 		button1=st.button("Classification Report")
 		col1, col2 = st.columns(2)
-		
+		if col1.button('Button 1'):
+			st.write('Button 1 was clicked!')
 		if button1:
 			st.write("Classification Report")
 			book1=pd.read_csv("Book1.csv")
@@ -129,7 +130,7 @@ if modal.is_open():
 			sns.heatmap(df_cm, annot=True,cmap = 'Blues',fmt = '.1f',xticklabels = categories, yticklabels = categories)
 			plt.xlabel("Predicted values", fontdict = {'size':14}, labelpad = 10)
 			plt.ylabel("Actual values" , fontdict = {'size':14}, labelpad = 10)
-			#plt.title ("Confusion Matrix", fontdict = {'size':18}, pad = 20)
+			plt.title ("Confusion Matrix", fontdict = {'size':18}, pad = 20)
 			st.pyplot()
 		
 		st.write("[Click Here to view complete GitHub Repository](https://github.com/VinayNagaraj07/Twitter-Sentiment-Analysis)")
