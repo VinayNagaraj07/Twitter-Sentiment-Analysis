@@ -2,7 +2,7 @@ Class,Precision,Recall,F1-score,Support
 Figurative,0.29,0.22,0.25,4240
 Irony,0.62,0.87,0.72,4135
 Regular,0.88,0.78,0.83,3707
-Sarcasm,.66,.64,0.65,4190
+Sarcasm,0.66,0.64,0.65,4190
 ,,,,
 ,,Overall Report,,
 accuracy,,,0.62,16272
