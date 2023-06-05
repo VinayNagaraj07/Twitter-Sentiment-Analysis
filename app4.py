@@ -106,4 +106,4 @@ if button:
 import streamlit.components.v1 as components
 if modal.is_open():
 	with modal.container():
-		st.write("[Click Here to view complete GitHub Repo](https://github.com/VinayNagaraj07/Twitter-Sentiment-Analysis)")
+		st.write("[Click Here to view complete GitHub Repository](https://github.com/VinayNagaraj07/Twitter-Sentiment-Analysis)")
