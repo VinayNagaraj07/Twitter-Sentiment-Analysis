@@ -99,10 +99,10 @@ else:
 	remark = "No Words to Analyze"
 	display_sarcastic_remark(remark)
 button=st.button("Stats For Nerd")	
-modal = Modal()
+modal = Modal("My Modal","black")
 
 if button:
-    modal.open("My Modal","black")
+    modal.open()
 import streamlit.components.v1 as components
 if modal.is_open():
 	with modal.container():
