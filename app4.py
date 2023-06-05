@@ -76,6 +76,7 @@ def annotating_text(text):
 			annot_text.append((word, "verb", "#faa"))
 		else:
 			annot_text.append((word))
+	return annot_text
 
 annot_text=annotating_text(text)
 annotated_text(tuple(annot_text))
