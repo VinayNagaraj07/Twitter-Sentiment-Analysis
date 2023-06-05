@@ -1,4 +1,4 @@
-      precision    recall  f1-score   support
+         class         precision    recall  f1-score   support
 
          0.0       0.92      0.93      0.93      2984
          1.0       0.99      0.99      0.99      4219
