@@ -69,7 +69,7 @@ if(text1!=""):
 	text1=cleantext.clean(text1, clean_all= False, extra_spaces=True ,stopwords=True ,lowercase=True ,numbers=True , punct=True)
 	st.write(text1)
 
-for annotating_text(text):
+def annotating_text(text):
 	annot_text=list()
 	for word in str(text).split():
 		if word in stopwords_set:
