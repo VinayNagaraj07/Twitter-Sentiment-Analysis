@@ -110,6 +110,8 @@ if modal.is_open():
 		book1=pd.read_csv("Book1.csv")
 		book1.replace(np.NaN,"",inplace=True)
 		st.table(book1)
+		html_table = html_table.replace('<table', '<table style="border-collapse: collapse;"')
+		st.markdown(html_table, unsafe_allow_html=True)
 		#st.dataframe(book1.style.set_properties(**{'text-align': 'center'}))
 		st.write("[Click Here to view complete GitHub Repository](https://github.com/VinayNagaraj07/Twitter-Sentiment-Analysis)")
 		
