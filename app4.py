@@ -109,7 +109,7 @@ if modal.is_open():
 		st.write("Classification Report")
 		book1=pd.read_csv("Book1.csv")
 		book1.replace(np.NaN,"",inplace=True)
-		st.table(book1)
+		#st.table(book1)
 		html_table = book1.to_html(index=False)
 		html_table = html_table.replace('<table', '<table style="border-collapse: collapse;"')
 		st.markdown(html_table, unsafe_allow_html=True)
