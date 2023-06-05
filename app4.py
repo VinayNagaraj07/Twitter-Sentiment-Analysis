@@ -106,4 +106,9 @@ if button:
 import streamlit.components.v1 as components
 if modal.is_open():
 	with modal.container():
-		st.write("Text goes here")
+		wordcloud = WordCloud(width=800, height=400).generate(text)
+		st.title('Word Cloud')
+		plt.figure(figsize=(10, 5))
+		plt.imshow(wordcloud, interpolation='bilinear')
+		plt.axis('off')
+		st.pyplot(plt)
