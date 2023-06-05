@@ -106,4 +106,4 @@ if button:
 import streamlit.components.v1 as components
 if modal.is_open():
 	with modal.container():
-		st.write("[Visit OpenAI's website](https://openai.com)")
+		st.write("[Click Here to view complete GitHub Repo](https://github.com/VinayNagaraj07/Twitter-Sentiment-Analysis)")
