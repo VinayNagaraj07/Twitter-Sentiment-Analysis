@@ -115,7 +115,7 @@ if modal.is_open():
 		if col2.button('Confusion Matrix','Confusion Matrix'):
 			st.write("Confusion Matrix of Trained Model")
 			categories = ['figurative', 'irony', 'regular', 'sarcasm']
-			plt.figure(figsize=(8, 5))
+			plt.figure(figsize=(7, 5))
 			df_cm=pd.read_csv('Confusion Matrix.csv')
 			df_cm.index=['figurative', 'irony', 'regular', 'sarcasm']
 			sns.heatmap(df_cm, annot=True,cmap = 'Blues',fmt = '.1f',xticklabels = categories, yticklabels = categories)
@@ -127,7 +127,7 @@ if modal.is_open():
 			if (text2!=""):
 				wordcloud = WordCloud(width=800, height=400).generate(text)
 				st.title('Word Cloud')
-				plt.figure(figsize=(10, 5))
+				plt.figure(figsize=(7, 5))
 				plt.imshow(wordcloud, interpolation='bilinear')
 				plt.axis('off')
 				st.pyplot(plt)
