@@ -108,16 +108,18 @@ if button:
 import streamlit.components.v1 as components
 if modal.is_open():
 	with modal.container():
-		st.write("Classification Report")
-		book1=pd.read_csv("Book1.csv")
-		book1.replace(np.NaN,"",inplace=True)
-		#book1 = book1.style.set_properties(**{'text-align': 'center'})
-		html_table = book1.to_html(index=False)
-		html_table = html_table.replace('<table', '<table style="border-collapse: collapse;"')
-		st.markdown(html_table, unsafe_allow_html=True)
-		modal1 = Modal("Stats For Nerd","black")
-		button1=st.button("Confusion Matrix")	
+		button1=st.button("Classification Report")
 		if button1:
+			st.write("Classification Report")
+			book1=pd.read_csv("Book1.csv")
+			book1.replace(np.NaN,"",inplace=True)
+			#book1 = book1.style.set_properties(**{'text-align': 'center'})
+			html_table = book1.to_html(index=False)
+			html_table = html_table.replace('<table', '<table style="border-collapse: collapse;"')
+			st.markdown(html_table, unsafe_allow_html=True)
+		modal1 = Modal("Stats For Nerd","black")
+		button2=st.button("Confusion Matrix")	
+		if button2:
 			categories = ['figurative', 'irony', 'regular', 'sarcasm']
 			plt.figure(figsize=(8, 6))
 			df_cm=pd.read_csv('Confusion Matrix.csv')
