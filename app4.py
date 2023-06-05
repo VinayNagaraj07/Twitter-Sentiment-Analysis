@@ -108,9 +108,9 @@ if button:
 import streamlit.components.v1 as components
 if modal.is_open():
 	with modal.container():
-		button1=st.button("Classification Report")
+		#button1=st.button("Classification Report")
 		col1, col2 = st.columns(2)
-		if col1.button('Classification Report'):
+		if col1.button('Classification Report','Classification Report'):
 			st.write("Classification Report")
 			book1=pd.read_csv("Book1.csv")
 			book1.replace(np.NaN,"",inplace=True)
@@ -118,7 +118,7 @@ if modal.is_open():
 			html_table = book1.to_html(index=False)
 			html_table = html_table.replace('<table', '<table style="border-collapse: collapse;"')
 			st.markdown(html_table, unsafe_allow_html=True)
-		if col2.button('Confusion Matrix'):
+		if col2.button('Confusion Matrix','Confusion Matrix'):
 			categories = ['figurative', 'irony', 'regular', 'sarcasm']
 			plt.figure(figsize=(8, 6))
 			df_cm=pd.read_csv('Confusion Matrix.csv')
