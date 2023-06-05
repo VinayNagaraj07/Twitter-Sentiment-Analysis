@@ -117,6 +117,7 @@ if modal.is_open():
 		modal1 = Modal("Stats For Nerd","black")
 		button1=st.button("Confusion Matrix")	
 		if button1:
+			categories = ['figurative', 'irony', 'regular', 'sarcasm']
 			plt.figure(figsize=(8, 6))
 			df_cm=pd.read_csv('Confusion Matrix.csv')
 			df_cm.index=['figurative', 'irony', 'regular', 'sarcasm']
