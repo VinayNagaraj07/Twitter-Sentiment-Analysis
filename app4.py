@@ -17,6 +17,7 @@ from wordcloud import WordCloud
 from sklearn.feature_extraction.text import TfidfVectorizer
 vectorizer = TfidfVectorizer(max_features=200)
 from streamlit_modal import Modal
+import seaborn as sns
 
 stopwords_set = set(stopwords.words('english'))
 
@@ -116,9 +117,14 @@ if modal.is_open():
 		modal1 = Modal("Stats For Nerd","black")
 		button1=st.button("Confusion Matrix")	
 		if button1:
-			modal1.open()
-			with modal1.container():
-				st.write("Classification Report")
+			plt.figure(figsize=(8, 6))
+			df_cm=pd.read_csv('Confusion Matrix.csv')
+			df_cm.index=['figurative', 'irony', 'regular', 'sarcasm']
+			sns.heatmap(df_cm, annot=True,cmap = 'Blues',xticklabels = categories, yticklabels = categories)
+			plt.xlabel("Predicted values", fontdict = {'size':14}, labelpad = 10)
+			plt.ylabel("Actual values" , fontdict = {'size':14}, labelpad = 10)
+			plt.title ("Confusion Matrix", fontdict = {'size':18}, pad = 20)
+			st.pyplot()
 		
 		st.write("[Click Here to view complete GitHub Repository](https://github.com/VinayNagaraj07/Twitter-Sentiment-Analysis)")
 		
