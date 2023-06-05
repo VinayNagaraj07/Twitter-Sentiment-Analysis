@@ -106,9 +106,4 @@ if button:
 import streamlit.components.v1 as components
 if modal.is_open():
 	with modal.container():
-		wordcloud = WordCloud(width=800, height=400).generate(text)
-		st.title('Word Cloud')
-		plt.figure(figsize=(10, 5))
-		plt.imshow(wordcloud, interpolation='bilinear')
-		plt.axis('off')
-		st.pyplot(plt)
+		st.write("[Visit OpenAI's website](https://openai.com)")
