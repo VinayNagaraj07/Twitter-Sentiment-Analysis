@@ -123,13 +123,13 @@ if modal.is_open():
 		button2=st.button("Confusion Matrix")	
 		if button2:
 			categories = ['figurative', 'irony', 'regular', 'sarcasm']
-			plt.figure(figsize=(3, 3))
+			plt.figure(figsize=(6, 6))
 			df_cm=pd.read_csv('Confusion Matrix.csv')
 			df_cm.index=['figurative', 'irony', 'regular', 'sarcasm']
 			sns.heatmap(df_cm, annot=True,cmap = 'Blues',fmt = '.1f',xticklabels = categories, yticklabels = categories)
 			plt.xlabel("Predicted values", fontdict = {'size':14}, labelpad = 10)
 			plt.ylabel("Actual values" , fontdict = {'size':14}, labelpad = 10)
-			plt.title ("Confusion Matrix", fontdict = {'size':18}, pad = 20)
+			#plt.title ("Confusion Matrix", fontdict = {'size':18}, pad = 20)
 			st.pyplot()
 		
 		st.write("[Click Here to view complete GitHub Repository](https://github.com/VinayNagaraj07/Twitter-Sentiment-Analysis)")
