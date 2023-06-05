@@ -108,7 +108,8 @@ if modal.is_open():
 	with modal.container():
 		st.write("Classification Report")
 		book1=pd.read_csv("Book1.csv")
-		st.write(book1)
+		st.dataframe(book1.style.set_properties(**{'text-align': 'center'}))
+		#st.write(book1)
 		#st.write("              precision    recall  f1-score   support\n\n         0.0       0.92      0.93      0.93      2984\n         1.0       0.99      0.99      0.99      4219\n         2.0       0.94      0.94      0.94      3576\n         3.0       1.00      1.00      1.00      4113\n\n    accuracy                           0.97     14892\n   macro avg       0.96      0.96      0.96     14892\nweighted avg       0.97      0.97      0.97     14892\n")
 		st.write("[Click Here to view complete GitHub Repository](https://github.com/VinayNagaraj07/Twitter-Sentiment-Analysis)")
 		
