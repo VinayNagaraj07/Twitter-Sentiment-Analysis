@@ -59,7 +59,7 @@ if(text1!=""):
 	text1=tknzr.tokenize(text1)
 	text1=str(text1)
 	text1=re.sub(r'[^a-zA-Z0-9\s]', '', text1)
-	text2=text1.copy()
+	text2=str(text1)
 	text1=cleantext.clean(text1, clean_all= False, extra_spaces=True ,stopwords=True ,lowercase=True ,numbers=True , punct=True)
 	st.write(text1)
 
