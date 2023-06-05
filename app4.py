@@ -18,7 +18,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 vectorizer = TfidfVectorizer(max_features=200)
 from streamlit_modal import Modal
 import seaborn as sns
-
+import warnings
+warnings.filterwarnings("ignore")
 stopwords_set = set(stopwords.words('english'))
 
 text=""
