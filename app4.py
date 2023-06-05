@@ -155,7 +155,7 @@ if modal.is_open():
 st.markdown('''
     ## Disclaimer
     
-    This Predictions are made from training on a specific Dataset only and for it is solely learning purposes only. Please consult with a qualified professional before making any decisions.
+    This Predictions are made from training on a specific Dataset only and for it is to be used solely learning purposes only. Please consult with a qualified professional before making any decisions.
     
     ---
     ''')
