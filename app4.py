@@ -118,6 +118,7 @@ if modal.is_open():
 	with modal.container():
 		st.write("Prediction Model Used - Support Vector Classification (SVC)")
 		st.write("Word Embedding done Using - Pre-Trained Glove")
+		st.write("Dataset Used - tweet.csv(Available in Repositry)")
 		#button1=st.button("Classification Report")
 		col1, col2,col3 = st.columns(3)
 		if col1.button('Classification Report','Classification Report'):
