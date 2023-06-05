@@ -105,7 +105,7 @@ if modal.is_open():
 		#button1=st.button("Classification Report")
 		col1, col2,col3 = st.columns(3)
 		if col1.button('Classification Report','Classification Report'):
-			st.write("Classification Report")
+			st.write("Classification Report of Trained Model")
 			book1=pd.read_csv("Book1.csv")
 			book1.replace(np.NaN,"",inplace=True)
 			#book1 = book1.style.set_properties(**{'text-align': 'center'})
@@ -113,6 +113,7 @@ if modal.is_open():
 			html_table = html_table.replace('<table', '<table style="border-collapse: collapse;"')
 			st.markdown(html_table, unsafe_allow_html=True)
 		if col2.button('Confusion Matrix','Confusion Matrix'):
+			st.write("Confusion Matrix of Trained Model")
 			categories = ['figurative', 'irony', 'regular', 'sarcasm']
 			plt.figure(figsize=(8, 6))
 			df_cm=pd.read_csv('Confusion Matrix.csv')
