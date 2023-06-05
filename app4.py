@@ -97,6 +97,9 @@ else:
 	st.write(text1)
 	remark = "No Words to Analyze"
 	display_sarcastic_remark(remark)
-	
-if st.button("Stats For Nerd"):
-	st.info("This is a warning message.")
+button=st.button("Stats For Nerd")	
+if button:
+	 with st.modal():
+        	st.write("This is a pop-up box!")
+		button=False
+        	st.button("Close")
