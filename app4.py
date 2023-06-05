@@ -57,18 +57,6 @@ if text:
 redunant_df = pd.read_csv("reduced_words.csv")
 redunant=set(redunant_df["words"])
 
-text1=cleaning_reduntant(text1)
-if(text1!=""):
-	st.title("Cleaned Text")
-	text1 = re.sub('((www.[^s]+)|(https?://[^s]+))|(http?://[^s]+)', '',text1)
-	tknzr = TweetTokenizer(strip_handles=True)
-	text1=tknzr.tokenize(text1)
-	text1=str(text1)
-	text1=re.sub(r'[^a-zA-Z0-9\s]', '', text1)
-	text2=str(text1)
-	text1=cleantext.clean(text1, clean_all= False, extra_spaces=True ,stopwords=True ,lowercase=True ,numbers=True , punct=True)
-	st.write(text1)
-
 def annotating_text(text):
 	annot_text=list()
 	for word in str(text).split():
@@ -80,6 +68,18 @@ def annotating_text(text):
 
 annot_text=annotating_text(text)
 annotated_text(annot_text)
+
+text1=cleaning_reduntant(text1)
+if(text1!=""):
+	st.title("Cleaned Text")
+	text1 = re.sub('((www.[^s]+)|(https?://[^s]+))|(http?://[^s]+)', '',text1)
+	tknzr = TweetTokenizer(strip_handles=True)
+	text1=tknzr.tokenize(text1)
+	text1=str(text1)
+	text1=re.sub(r'[^a-zA-Z0-9\s]', '', text1)
+	text2=str(text1)
+	text1=cleantext.clean(text1, clean_all= False, extra_spaces=True ,stopwords=True ,lowercase=True ,numbers=True , punct=True)
+	st.write(text1)
 
 with open(filename, 'rb') as file:
 	model = pickle.load(file)
