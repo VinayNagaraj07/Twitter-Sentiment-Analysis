@@ -110,9 +110,7 @@ if modal.is_open():
 	with modal.container():
 		button1=st.button("Classification Report")
 		col1, col2 = st.columns(2)
-		if col1.button('Button 1'):
-			st.write('Button 1 was clicked!')
-		if button1:
+		if col1.button('Classification Report'):
 			st.write("Classification Report")
 			book1=pd.read_csv("Book1.csv")
 			book1.replace(np.NaN,"",inplace=True)
@@ -120,9 +118,7 @@ if modal.is_open():
 			html_table = book1.to_html(index=False)
 			html_table = html_table.replace('<table', '<table style="border-collapse: collapse;"')
 			st.markdown(html_table, unsafe_allow_html=True)
-		modal1 = Modal("Stats For Nerd","black")
-		button2=st.button("Confusion Matrix")	
-		if button2:
+		if col2.button('Confusion Matrix'):
 			categories = ['figurative', 'irony', 'regular', 'sarcasm']
 			plt.figure(figsize=(8, 6))
 			df_cm=pd.read_csv('Confusion Matrix.csv')
