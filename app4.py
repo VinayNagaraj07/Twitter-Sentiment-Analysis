@@ -73,7 +73,7 @@ def annotating_text(text):
 	annot_text=list()
 	for word in str(text).split():
 		if word in stopwords_set:
-			annot_text.append((word, "Stop Word", "#fea"))
+			annot_text.append((word, "Stop Word", "#fea","#afa"))
 		else:
 			annot_text.append(word)
 	return annot_text
