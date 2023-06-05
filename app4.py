@@ -152,3 +152,10 @@ if modal.is_open():
 		
 		st.write("[Click Here to view complete GitHub Repository](https://github.com/VinayNagaraj07/Twitter-Sentiment-Analysis)")
 		
+st.markdown('''
+    ## Disclaimer
+    
+    This Predictions are made from training on a specific Dataset only and for it is solely learning purposes only. Please consult with a qualified professional before making any decisions.
+    
+    ---
+    ''')
