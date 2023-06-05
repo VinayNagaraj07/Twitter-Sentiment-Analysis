@@ -109,24 +109,9 @@ if modal.is_open():
 		st.write("Classification Report")
 		book1=pd.read_csv("Book1.csv")
 		book1.replace(np.NaN,"",inplace=True)
-		st.markdown(
-    f"""
-    <style>
-    .centered-table {{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
-		st.table(book1.style.hide_index().set_table_styles([{"selector": ".row_heading", "props": [("display", "none")]}]).set_table_attributes("class='centered-table'"))
-		#st.table(book1)
-		#html_table = book1.to_html(index=False)
-		#html_table = html_table.replace('<table', '<table style="border-collapse: collapse;"')
+		book1 = book1.style.set_properties(**{'text-align': 'center'})
+		html_table = book1.to_html(index=False)
+		html_table = html_table.replace('<table', '<table style="border-collapse: collapse;"')
 		st.markdown(html_table, unsafe_allow_html=True)
-		#st.dataframe(book1.style.set_properties(**{'text-align': 'center'}))
 		st.write("[Click Here to view complete GitHub Repository](https://github.com/VinayNagaraj07/Twitter-Sentiment-Analysis)")
 		
