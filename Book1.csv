@@ -1,11 +1,11 @@
-class,precision,recall,f1-score,support
-figurative,0.92,0.93,0.93,2984
-irony,0.99,0.99,0.99,4219
-regular,0.94,0.94,0.94,3576
-sarcasm,1.00,1.00,1.00,4113
+Class,Precision,Recall,F1-score,Support
+Figurative,0.92,0.93,0.93,2984
+Irony,0.99,0.99,0.99,4219
+Regular,0.94,0.94,0.94,3576
+Sarcasm,1.00,1.00,1.00,4113
 ,,,,
 ,,Overall Report,,
-class,precision,recall,f1-score,support
 accuracy,,,0.97,14892
+Parameter,Precision,Recall,F1-score,Support
 macro avg,0.96,0.96,0.96,14892
 weighted avg,0.97,0.97,0.97,14892
