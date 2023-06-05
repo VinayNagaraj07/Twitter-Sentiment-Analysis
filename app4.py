@@ -79,7 +79,7 @@ def annotating_text(text):
 	return annot_text
 
 annot_text=annotating_text(text)
-annotated_text(tuple(annot_text))
+annotated_text(annot_text)
 			
 			
 			
