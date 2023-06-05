@@ -98,8 +98,9 @@ else:
 	remark = "No Words to Analyze"
 	display_sarcastic_remark(remark)
 button=st.button("Stats For Nerd")	
+placeholder = st.empty()
 if button:
-	placeholder = st.empty()
+	
 	placeholder.markdown("[Visit OpenAI's website](https://openai.com)")
 	placeholder.markdown("<a href='https://github.com/VinayNagaraj07/Twitter-Sentiment-Analysis/edit/main' target='_blank'>Click here</a> to visit for Complete Project.")
 	placeholder.write("This is a pop-up box!")
