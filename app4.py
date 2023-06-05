@@ -103,8 +103,20 @@ modal = Modal("Demo Modal","")
 
 if button:
     modal.open()
-
+import streamlit.components.v1 as components
 if modal.is_open():
     with modal.container():
-		st.set_page_config(page_title="Streamlit App",layout="wide",initial_sidebar_state="auto",background_color="#F0F2F6")
-		st.write("Text goes here")
+	st.write("Text goes here")
+
+        html_string = '''
+        <h1>HTML string in RED</h1>
+
+        <script language="javascript">
+          document.querySelector("h1").style.color = "red";
+        </script>
+        '''
+        components.html(html_string)
+
+        st.write("Some fancy text")
+        value = st.checkbox("Check me")
+        st.write(f"Checkbox checked: {value}")
