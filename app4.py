@@ -66,13 +66,7 @@ if(text1!=""):
 	text1=cleantext.clean(text1, clean_all= False, extra_spaces=True ,stopwords=True ,lowercase=True ,numbers=True , punct=True)
 	st.write(text1)
 
-if (text2!=""):
-	wordcloud = WordCloud(width=800, height=400).generate(text)
-	st.title('Word Cloud')
-	plt.figure(figsize=(10, 5))
-	plt.imshow(wordcloud, interpolation='bilinear')
-	plt.axis('off')
-	st.pyplot(plt)
+
 
 with open(filename, 'rb') as file:
 	model = pickle.load(file)
@@ -109,7 +103,7 @@ import streamlit.components.v1 as components
 if modal.is_open():
 	with modal.container():
 		#button1=st.button("Classification Report")
-		col1, col2 = st.columns(2)
+		col1, col2,col3 = st.columns(3)
 		if col1.button('Classification Report','Classification Report'):
 			st.write("Classification Report")
 			book1=pd.read_csv("Book1.csv")
@@ -128,6 +122,15 @@ if modal.is_open():
 			plt.ylabel("Actual values" , fontdict = {'size':14}, labelpad = 10)
 			plt.title ("Confusion Matrix", fontdict = {'size':18}, pad = 20)
 			st.pyplot()
+		if col2.button('Word Cloud','Word Cloud'):
+			
+			if (text2!=""):
+				wordcloud = WordCloud(width=800, height=400).generate(text)
+				st.title('Word Cloud')
+				plt.figure(figsize=(10, 5))
+				plt.imshow(wordcloud, interpolation='bilinear')
+				plt.axis('off')
+				st.pyplot(plt)
 		
 		st.write("[Click Here to view complete GitHub Repository](https://github.com/VinayNagaraj07/Twitter-Sentiment-Analysis)")
 		
