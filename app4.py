@@ -69,7 +69,10 @@ if(text1!=""):
 	st.write(text1)
 
 
-
+annotated_text(
+    "Hello ",
+    annotation("world!", "noun", color="#8ef", border="1px dashed red"),
+)
 with open(filename, 'rb') as file:
 	model = pickle.load(file)
 	unseen_tweets=[text1]
