@@ -10,3 +10,4 @@ wordcloud
 scikit-learn
 streamlit-modal
 seaborn
+st-annotated-text
