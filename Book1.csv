@@ -5,6 +5,7 @@ regular,0.94,0.94,0.94,3576
 sarcasm,1.00,1.00,1.00,4113
 ,,,,
 ,,Overall Report,,
+class,precision,recall,f1-score,support
 accuracy,,,0.97,14892
 macro avg,0.96,0.96,0.96,14892
 weighted avg,0.97,0.97,0.97,14892
