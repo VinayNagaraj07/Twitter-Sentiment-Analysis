@@ -73,9 +73,9 @@ def annotating_text(text):
 	annot_text=list()
 	for word in str(text).split():
 		if word in stopwords_set:
-			annot.append((word, "verb", "#faa"))
+			annot_text.append((word, "verb", "#faa"))
 		else:
-			annot.append((word))
+			annot_text.append((word))
 
 annot_text=annotating_text(text)
 annotated_text(tuple(annot_text))
