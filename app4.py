@@ -93,3 +93,6 @@ else:
 	st.write(text1)
 	remark = "No Words to Analyze"
 	display_sarcastic_remark(remark)
+	
+if st.button("Stats For Nerd"):
+	st.warning("This is a warning message.")
