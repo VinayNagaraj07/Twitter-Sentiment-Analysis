@@ -19,6 +19,8 @@ vectorizer = TfidfVectorizer(max_features=200)
 from streamlit_modal import Modal
 import seaborn as sns
 import warnings
+from annotated_text import annotated_text
+
 warnings.filterwarnings("ignore")
 stopwords_set = set(stopwords.words('english'))
 st.set_option('deprecation.showPyplotGlobalUse', False)
