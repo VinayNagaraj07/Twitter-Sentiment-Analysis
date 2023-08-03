@@ -11,3 +11,4 @@ scikit-learn==1.2.2
 streamlit-modal
 seaborn
 st-annotated-text
+pickle==4.0.0.1
